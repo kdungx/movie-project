@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <BorderPane prefHeight="506.0" prefWidth="811.0" BorderPane.alignment="CENTER">
+         <top>
+            <AnchorPane prefHeight="58.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutY="6.0" prefHeight="46.0" prefWidth="600.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
+                     <children>
+                        <Button layoutX="748.0" layoutY="2.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="56.0">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="CLOSE" size="1.5em" text="" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="690.0" layoutY="2.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="58.0">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="MINUS" size="1.2em" wrappingWidth="11.314285278320312" />
+                           </graphic>
+                        </Button>
+                        <Label layoutX="32.0" layoutY="14.0" text="Movie Ticket Booking Management System">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="13.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIcon fill="#ae2d3c" glyphName="PLAY" layoutX="14.0" layoutY="27.0" size="1.2em" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <FontAwesomeIcon glyphName="USER" layoutX="71.0" layoutY="75.0" size="7em" />
+                  <Label layoutX="69.0" layoutY="87.0" text="Welcome">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="107.0" prefHeight="17.0" prefWidth="181.0" text="YOUR USERNAME">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </center>
+</BorderPane>
