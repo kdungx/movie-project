@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="moviebook">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/moviebook.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
