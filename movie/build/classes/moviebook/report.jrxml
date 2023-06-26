@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="226" pageHeight="425" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="27878acb-816c-46ff-ba97-81245d539fb4">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="226" pageHeight="425" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="27878acb-816c-46ff-ba97-81245d539fb4">
 	<property name="ireport.zoom" value="3.138428376721004"/>
-	<property name="ireport.x" value="64"/>
-	<property name="ireport.y" value="333"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="receipt" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -56,7 +56,7 @@ FROM
 				<text><![CDATA[Ticket #:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="150" y="8" width="26" height="12" uuid="9712507e-a5e2-4aef-acfb-0764d5177530"/>
+				<reportElement x="148" y="7" width="26" height="12" uuid="9712507e-a5e2-4aef-acfb-0764d5177530"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
@@ -74,16 +74,16 @@ FROM
 		<band splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="35" splitType="Stretch">
+		<band height="39" splitType="Stretch">
 			<staticText>
-				<reportElement x="12" y="10" width="41" height="14" uuid="3c4b8914-76fb-442e-a2ac-8c4e5a93eab5"/>
+				<reportElement x="0" y="10" width="41" height="14" uuid="3c4b8914-76fb-442e-a2ac-8c4e5a93eab5"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial" size="7" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Type]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="65" y="10" width="58" height="14" uuid="68900c72-32bf-4e3a-882a-5f773d54d748"/>
+				<reportElement x="53" y="10" width="45" height="14" uuid="68900c72-32bf-4e3a-882a-5f773d54d748"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial" size="7" isBold="true"/>
 				</textElement>
@@ -105,7 +105,7 @@ FROM
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="40" splitType="Stretch">
+		<band height="43" splitType="Stretch">
 			<textField>
 				<reportElement x="12" y="6" width="41" height="20" uuid="6f454bb5-5f25-448a-8b6d-af74f4936eaa"/>
 				<textElement textAlignment="Center">
@@ -136,7 +136,7 @@ FROM
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="25" splitType="Stretch">
+		<band height="31" splitType="Stretch">
 			<staticText>
 				<reportElement x="53" y="5" width="82" height="20" uuid="01933fe1-453f-4dc7-a18f-392a730b16ba"/>
 				<textElement textAlignment="Left"/>

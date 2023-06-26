@@ -1,7 +1,6 @@
 package moviebook;
-
+import net.sf.jasperreports.engine.design.JasperDesign;
 import javafx.fxml.Initializable;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
@@ -12,8 +11,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -44,6 +46,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class DashboardController implements Initializable {
      @FXML
@@ -298,12 +307,34 @@ public class DashboardController implements Initializable {
     //part3 phut:26:51   //
     //******************//
     public void receipt(){
-       JasperDeign jDeign;
+        
+        if(total>0){
+        
+            HashMap hash = new HashMap();
+            hash.put("receipt", num);
+            try {
+                JasperDesign jDesign = JRXmlLoader.load("C:\\Users\\ACER\\Documents\\NetBeansProjects\\movie\\src\\moviebook\\report.jrxml");
+                JasperReport jReport = JasperCompileManager.compileReport(jDesign);
+                JasperPrint jPrint = JasperFillManager.fillReport(jReport, hash, connect);
+
+                JasperViewer.viewReport(jPrint, false);
+            } catch (JRException ex) {
+            }  
+         }else{
+               Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Invalid ");
+                alert.showAndWait();
+            
+        }
+            
     }
-   
+    private int num;
+    private int qty;
     
     public void buy(){
-        String sql = "INSERT INTO customer (type,total,date) VALUES(?,?,?)";
+        String sql = "INSERT INTO customer (type,quantity,total,date) VALUES(?,?,?,?)";
 	connect = database.connectDb();
 	String type = "";
 	if(price1 > 0){
@@ -318,12 +349,13 @@ public class DashboardController implements Initializable {
          java.sql.Date setDate = new java.sql.Date(date.getTime());
         	try{
 		
-		
+		qty = qty1+qty2;
 		
 		prepare = connect.prepareStatement(sql);
 		prepare.setString(1, type);
-		prepare.setString(2, String.valueOf(total));
-		prepare.setString(3, String.valueOf(setDate));
+                prepare.setString(2, String.valueOf(qty));
+		prepare.setString(3, String.valueOf(total));
+		prepare.setString(4, String.valueOf(setDate));
 		
 		Alert alert;
 		
@@ -365,8 +397,9 @@ public class DashboardController implements Initializable {
 			prepare = connect.prepareStatement(sql2);
 			prepare.setString(1, String.valueOf(num));
 			prepare.setString(2, type);
-                        prepare.setString(3, String.valueOf(total));
-                        prepare.setString(4,avaliableMovies_title.getText());
+                         prepare.setString(3, String.valueOf(qty));
+                        prepare.setString(4, String.valueOf(total));
+                        prepare.setString(5,avaliableMovies_title.getText());
 			
 			prepare.execute();
 			

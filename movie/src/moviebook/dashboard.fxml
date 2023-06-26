@@ -90,7 +90,7 @@
                         </AnchorPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="addMovies_form" prefHeight="796.0" prefWidth="1587.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="addMovies_form" prefHeight="796.0" prefWidth="1587.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane layoutX="341.0" prefHeight="773.0" prefWidth="516.0" styleClass="bg-white" stylesheets="@dashboardDesign.css">
                            <children>
@@ -134,7 +134,7 @@
                         </AnchorPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="availableMovies_form" layoutX="131.0" layoutY="28.0" prefHeight="796.0" prefWidth="1211.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="334.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="availableMovies_form" layoutX="131.0" layoutY="28.0" prefHeight="796.0" prefWidth="1211.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="334.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane layoutX="14.0" layoutY="24.0" prefHeight="220.0" prefWidth="1191.0" styleClass="bg-white" stylesheets="@dashboardDesign.css">
                            <children>
@@ -226,7 +226,7 @@
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="avaliableMovie_recceiptBtn" layoutX="772.0" layoutY="269.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="82.0" styleClass="receipt-btn" stylesheets="@dashboardDesign.css" text="Recceipt" />
+                              <Button fx:id="avaliableMovie_recceiptBtn" layoutX="772.0" layoutY="269.0" mnemonicParsing="false" onAction="#receipt" prefHeight="36.0" prefWidth="82.0" styleClass="receipt-btn" stylesheets="@dashboardDesign.css" text="Recceipt" />
                               <Button fx:id="avaliableMovie_clearBtn" layoutX="383.0" layoutY="269.0" mnemonicParsing="false" onAction="#clearPurchaseTicketInfo" prefHeight="36.0" prefWidth="82.0" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="Clear" />
                               <Button fx:id="avaliableMovie_buyBtn" layoutX="874.0" layoutY="269.0" mnemonicParsing="false" onAction="#buy" prefHeight="36.0" prefWidth="82.0" styleClass="buy-btn" stylesheets="@dashboardDesign.css" text="Buy" />
                               <Spinner fx:id="availableMovies_specialClass_quantity" layoutX="514.0" layoutY="116.0" onMouseClicked="#getSpinnerValue" prefHeight="30.0" prefWidth="74.0" />
