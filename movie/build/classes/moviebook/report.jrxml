@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="226" pageHeight="425" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="27878acb-816c-46ff-ba97-81245d539fb4">
+	<property name="ireport.zoom" value="5.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="475"/>
+	<parameter name="receipt" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     customer_info.`id` AS customer_info_id,
+     customer_info.`customer_id` AS customer_info_customer_id,
+     customer_info.`type` AS customer_info_type,
+     customer_info.`total` AS customer_info_total,
+     customer_info.`movieTitle` AS customer_info_movieTitle,
+     customer.`id` AS customer_id,
+     customer.`type` AS customer_type,
+     customer.`total` AS customer_total,
+     customer.`date` AS customer_date
+FROM
+     `customer_info` customer_info INNER JOIN `customer` customer ON customer_info.`customer_id` = customer.`id` WHERE `customer_id`= $P{receipt}]]>
+	</queryString>
+	<field name="customer_info_id" class="java.lang.Integer"/>
+	<field name="customer_info_customer_id" class="java.lang.Integer"/>
+	<field name="customer_info_type" class="java.lang.String"/>
+	<field name="customer_info_total" class="java.lang.Double"/>
+	<field name="customer_info_movieTitle" class="java.lang.String"/>
+	<field name="customer_id" class="java.lang.Integer"/>
+	<field name="customer_type" class="java.lang.String"/>
+	<field name="customer_total" class="java.lang.Double"/>
+	<field name="customer_date" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="91" splitType="Stretch">
+			<staticText>
+				<reportElement x="65" y="33" width="121" height="39" uuid="80d22cc8-9a71-48ee-9124-6fb1b03d1106"/>
+				<textElement>
+					<font fontName="Arial" size="30"/>
+				</textElement>
+				<text><![CDATA[inema]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="24" y="20" width="162" height="62" forecolor="#CC0033" uuid="b9e1dd4b-c6ad-473d-9f57-2352050ea310"/>
+				<textElement>
+					<font fontName="Vladimir Script" size="48"/>
+				</textElement>
+				<text><![CDATA[C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="123" y="8" width="27" height="12" uuid="45421aab-74a8-4fd5-b987-9bf1a4365784"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Ticket #:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="148" y="7" width="26" height="12" uuid="9712507e-a5e2-4aef-acfb-0764d5177530"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_info_customer_id}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="12" y="82" width="164" height="1" uuid="f4d0b961-51c2-43d1-9184-a4f91d148657"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="41" height="14" uuid="3c4b8914-76fb-442e-a2ac-8c4e5a93eab5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="53" y="10" width="45" height="14" uuid="68900c72-32bf-4e3a-882a-5f773d54d748"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Movie Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="10" width="41" height="14" uuid="7a7de28c-0183-4c82-8040-c69b3c305e80"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total ($)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="12" y="31" width="164" height="1" uuid="2f2239c8-5f3c-4397-85bb-0002c859a2f1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="104" y="10" width="25" height="14" uuid="186f8e1c-6ed9-4189-abe2-1966cd92fe01"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="6" width="41" height="20" uuid="6f454bb5-5f25-448a-8b6d-af74f4936eaa"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_info_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="53" y="6" width="45" height="20" uuid="947a9c45-a3b3-4e58-8ed2-14a3a5e3ecfc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_info_movieTitle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="6" width="41" height="20" uuid="d715b1b9-2948-4fd3-9557-63fbd5783cde"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_info_total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="12" y="25" width="164" height="1" uuid="39d9d077-9735-4443-ade7-ed0cc5193689"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="53" y="5" width="82" height="20" uuid="01933fe1-453f-4dc7-a18f-392a730b16ba"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Total Payment:$]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="125" y="5" width="31" height="20" uuid="097ad51d-e260-4e91-af6e-e60041450b82"/>
+				<textFieldExpression><![CDATA[$F{customer_total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="125" y="34" width="60" height="20" uuid="25dbbdb7-0f58-4945-9f8b-27ff6b1d0ec3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

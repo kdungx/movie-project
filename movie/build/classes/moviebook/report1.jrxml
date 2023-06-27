@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="711ccbc7-fd6f-44af-8361-7ed6919b2358">
+	<property name="ireport.zoom" value="1.610510000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="receipt" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     customer_info.`id` AS customer_info_id,
+     customer_info.`customer_id` AS customer_info_customer_id,
+     customer_info.`type` AS customer_info_type,
+     customer_info.`total` AS customer_info_total,
+     customer_info.`movieTitle` AS customer_info_movieTitle,
+     customer_info.`quantity` AS customer_info_quantity,
+     customer.`id` AS customer_id,
+     customer.`type` AS customer_type,
+     customer.`quantity` AS customer_quantity,
+     customer.`total` AS customer_total,
+     customer.`date` AS customer_date
+FROM
+     `customer_info` customer_info INNER JOIN `customer` customer ON customer_info.`customer_id` = customer.`id` WHERE  customer.`id = $P{receipt}]]>
+	</queryString>
+	<field name="customer_info_id" class="java.lang.Integer"/>
+	<field name="customer_info_customer_id" class="java.lang.Integer"/>
+	<field name="customer_info_type" class="java.lang.String"/>
+	<field name="customer_info_total" class="java.lang.Double"/>
+	<field name="customer_info_movieTitle" class="java.lang.String"/>
+	<field name="customer_info_quantity" class="java.lang.Integer"/>
+	<field name="customer_id" class="java.lang.Integer"/>
+	<field name="customer_type" class="java.lang.String"/>
+	<field name="customer_quantity" class="java.lang.Integer"/>
+	<field name="customer_total" class="java.lang.Double"/>
+	<field name="customer_date" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="214" y="19" width="100" height="41" uuid="997f4ef9-9dec-45b6-8eaa-fe6135af2714"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Cinema]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="4" width="100" height="20" uuid="110c9e79-b4c1-4827-8456-76fa60e82f01"/>
+				<text><![CDATA[Tikeck#:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="397" y="4" width="100" height="20" uuid="2f7992ce-10d7-435c-bf71-e4c6a8349435"/>
+				<textFieldExpression><![CDATA[$F{customer_info_customer_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="0" width="100" height="39" uuid="50870ca1-cd2b-43b8-9301-e4a317404371"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="0" width="140" height="39" uuid="7f0c1b79-6035-4dc4-9f68-f728839abc4a"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Movie Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="0" width="100" height="39" uuid="fc2f332b-97eb-4960-be95-e25f2726332a"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="437" y="0" width="100" height="39" uuid="bb483bac-b75a-4e58-9d96-949db4eeab36"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Total($)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="12" y="17" width="100" height="20" uuid="41dc7682-7f00-4c71-b4e6-cb6a54420358"/>
+				<textFieldExpression><![CDATA[$F{customer_info_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="437" y="17" width="100" height="20" uuid="6331fc02-3a4b-4bd7-9884-f0202c9f2406"/>
+				<textFieldExpression><![CDATA[$F{customer_info_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="17" width="100" height="20" uuid="7fc9f27b-6815-4c66-8081-5e9eecdc6b7a"/>
+				<textFieldExpression><![CDATA[$F{customer_info_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="17" width="100" height="20" uuid="4839f9bf-5d64-4a42-9546-d9b409f8fa4e"/>
+				<textFieldExpression><![CDATA[$F{customer_info_movieTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
