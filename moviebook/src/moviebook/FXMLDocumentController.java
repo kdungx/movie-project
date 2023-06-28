@@ -74,7 +74,7 @@ public class  FXMLDocumentController implements Initializable {
     private Hyperlink signUp_alreadyHaveAccount;
 
     // database
-    private Connection connect;
+      private Connection connect;
     private PreparedStatement prepare;
     private Statement statement;
     private ResultSet result;

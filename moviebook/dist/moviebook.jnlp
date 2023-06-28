@@ -11,7 +11,7 @@
     <jar href="lib\fontawesomefx-8.2.jar" size="180341" download="eager" />
     <jar href="lib\mysql-connector.jar" size="540852" download="eager" />
     <jar href="lib\ojdbc14-10.2.0.4.0.jar" size="1555682" download="eager" />
-    <jar href="moviebook.jar" size="1159029" download="eager" />
+    <jar href="moviebook.jar" size="1166693" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="moviebook" >
     <param name="requiredFXVersion" value="8.0+"/>
